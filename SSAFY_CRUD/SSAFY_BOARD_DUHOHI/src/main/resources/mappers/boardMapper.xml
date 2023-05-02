@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.board.model.dao.BoardDao">
+
+	<!-- 전체글 조회 -->
+	<select id="selectAll" resultType="Board">
+		SELECT id, content, writer, title, view_cnt as viewCnt, date_format(reg_date, '%y-%m-%d %H:%i:%s') as regDate
+		, (SELECT COUNT(*) FROM likeboard WHERE boardId = board.id) as likeCnt
+		FROM board;
+	</select>
+	
+	<!-- 상세글 조회 -->
+	<select id="selectOne" parameterType="int"  resultType="Board">
+		SELECT id, content, writer, title, view_cnt as viewCnt, date_format(reg_date, '%y-%m-%d %H:%i:%s') as regDate
+		, (SELECT COUNT(*) FROM likeboard WHERE boardId = board.id) as likeCnt
+		FROM board
+		WHERE id = #{id}
+	</select>
+	
+	<!-- 유저의 ID를 받아와서 해당 유저가 좋아요한 게시글 가져오기 -->
+	<select id="selectLikeBoard" parameterType="String" resultType="Board">
+		SELECT id, content, writer, title, view_cnt as viewCnt, date_format(reg_date, '%y-%m-%d %H:%i:%s') as regDate
+		, (SELECT COUNT(*) FROM likeboard WHERE boardId = board.id) as likeCnt
+		FROM board
+		WHERE id IN (SELECT boardId FROM likeboard WHERE userId = #{userId})
+	</select>
+	
+	<!-- 게시글 등록 -->
+	<insert id="insertBoard" parameterType="Board" keyProperty="id" useGeneratedKeys="true">
+		INSERT INTO board (id, title, writer, content)
+		VALUES (#{id}, #{title}, #{writer}, #{content})
+	</insert>
+	
+	<!-- 게시글 삭제 -->
+	<delete id="deleteBoard" parameterType="int">
+		DELETE FROM board
+		WHERE id = #{id}
+	</delete>
+	
+	<!-- 조회수 증가 -->
+	<update id="updateViewCnt" parameterType="int">
+		UPDATE board
+		SET view_cnt = view_cnt+1
+		WHERE id = #{id}
+	</update>
+	
+	
+	<!-- 게시글 수정 -->
+	<update id="updateBoard" parameterType="Board">
+		UPDATE board
+		SET title = #{title}, content=#{content}, reg_date = now()
+		WHERE id=#{id}
+	</update>	
+	
+	<!-- 검색기능 -->
+	<select id="search" resultType="Board" parameterType="SearchCondition" >
+		SELECT id, content, writer, title, view_cnt as viewCnt, date_format(reg_date, '%y-%m-%d %H:%i:%s') as regDate
+		, (SELECT COUNT(*) FROM likeboard WHERE boardId = board.id) as likeCnt
+		FROM board
+		<if test="key != 'none'">
+			WHERE ${key} LIKE CONCAT('%', #{word}, '%')
+		</if>
+		<if test="orderBy != 'none'">
+			ORDER BY ${orderBy} ${orderByDir}
+		</if>
+	</select>
+	
+	<!-- 글쓴이가 글 몇 개 썼는지 체크 -->
+	<select id="selectCnt" parameterType="String" resultType="int">
+		SELECT COUNT(*)
+		FROM board
+		WHERE writer = #{writer}
+	</select>
+	
+	<!-- 좋아요 많은 게시글 상위 3개 가져오기 / 좋아요가 같다면 최근 게시글 -->
+	<select id="selectBestBoard" resultType="Board">
+		SELECT id, content, writer, title, view_cnt as viewCnt, date_format(reg_date, '%y-%m-%d %H:%i:%s') as regDate
+		, (SELECT COUNT(*) FROM likeboard WHERE boardId = board.id) as likeCnt
+		FROM board
+		ORDER BY likeCnt DESC, RAND()
+		LIMIT 3
+	</select>
+	
+</mapper>

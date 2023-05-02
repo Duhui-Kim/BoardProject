@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.board.model.dao.LikeBoardDao">
+	<select id="selectLike" parameterType="LikeBoard" resultType="int">
+		SELECT likeId FROM likeboard 
+		WHERE boardId = #{boardId} AND userId = #{userId}
+	</select>
+	
+	<select id="selectCnt" parameterType="LikeBoard" resultType="int">
+		SELECT COUNT(*) FROM likeboard 
+		WHERE boardId = #{boardId} AND userId = #{userId}
+	</select>
+	
+	<insert id="insertLike" parameterType="LikeBoard">
+		INSERT INTO likeboard
+		VALUES (0, #{boardId}, #{userId})
+	</insert>
+	
+	<delete id="deleteLike" parameterType="LikeBoard">
+		DELETE FROM likeboard
+		WHERE boardId = #{boardId} AND userId = #{userId}
+	</delete>
+</mapper>

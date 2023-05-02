@@ -1,0 +1,307 @@
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
+
+h2 {
+    font-family: 'Spoqa Han Sans Neo', sans-serif;
+    font-weight:900;
+}
+
+body{
+    font-family: 'Spoqa Han Sans Neo', sans-serif;
+    font-weight: 400;
+}
+
+a{
+    color: black;
+    text-decoration:none;
+}
+
+/* btn color setter */
+.btn-color-1{
+    border-color:#add574;
+    color: #add574;
+}
+
+.btn-color-2{
+    border-color:#4a7a06;
+    color: #4a7a06;
+}
+
+.btn-color-3{
+    background-color: #4a7a06;
+    color: white;
+}
+
+.btn-color-4{
+    background-color:#add574;
+    color: black;
+}
+
+/* header */
+.header-loginarea{
+    display: flex;
+    align-items: center;	
+    justify-content: end;
+    margin: 10px;
+}
+	
+.header-loginarea-text-name{
+    margin: 0px;
+    font-weight: 700;
+}
+
+.header-loginarea > a{
+    margin: 5px;
+}
+
+
+/* myPage */
+.myPage-info{
+    display: flex;
+    flex-direction: row ;
+}
+
+.myPage-info > div{
+    margin: 5px;
+}
+
+.myPage-memverlv-text{
+    font-size: 120%;
+}
+
+.myPage-memberimg img{
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    vertical-align:middle;
+}
+
+.myPage-memberimg col-3{
+	margin: 0 auto;
+}
+
+.myPage-memberlv-Info{
+    width: 100%;
+    height: auto;
+}
+
+.myPage-memberlv-Info span{
+    text-align: center;
+}
+
+.myPage-name{
+    margin: 5px;
+}
+
+.myPage-memberInfo-category{
+    font-size: 120%
+}
+
+
+.myPage-memberinfo-table th{
+    width:30%;
+}
+
+.myPage-likeboardlist{
+    align-items: center;
+    width: 100%;    
+    min-width: 100%;
+    margin: 20px 0px 0px 0px;
+}
+
+.myPage-like-username, .myPage-like-text{
+    font-size: 130%;
+}
+
+.myPage-like-username{
+    font-weight: 700;
+}
+
+.myPage-like-username{
+    margin: 5px;
+}
+
+.mypage-infoarea-title{
+    margin: 0px 0px 10px 0px;
+}
+
+.myPage-btnarea{
+    display: flex;
+    justify-content: end;
+}
+
+.myPage-withdrawal{
+    margin: 20px 0px 0px 0px;
+}
+
+
+/* 리스트 */
+.list-bestboard-title{
+    margin: 30px 0px;	
+}
+
+.list-bestboard-carddiv, .list-bestboard-card{
+    height: 270px;
+}
+
+.list-bestboard-text{
+    margin:0px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+    height: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.list-boardlist-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.list-registbtn{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 디테일 */        
+.detail-board-header-text{
+    display: flex;
+    flex-direction: row ;
+    justify-content: space-between;
+}
+
+.detail-board-header-text-writer{	
+    display: flex;
+    align-items: center;
+}
+
+.detail-board-header-text-time{
+    text-align: end;
+}
+
+.detail-board-header-nums{
+    display: flex;
+    justify-content: end;
+}
+
+.detail-board-content-content{
+    font-size: 20px;
+}
+
+.detail-board-content-files-downloadbtn{
+    height: 30px;
+    font-size: 12px;
+    display: flex;
+    width: 80px;
+}
+
+.filelist{
+    display: flex;
+    flex-direction: row;
+    align-items: center;    
+    justify-content: space-between;
+}
+
+.filelist-text{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.filelist-text-downloadbtn{
+    text-align: center;
+}
+
+.detail-boardbtns{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: end;
+}
+
+.detail-boardbtns > a{
+    margin: 5px;
+}
+
+.detail-boardbtns > .btn{
+    border-radius: 1.5rem;
+}
+
+.detail-under{
+    display: flex;    
+    align-items: center;
+    justify-content: space-between;
+}
+
+.detail-review-cnt{
+    height: 40px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+}
+
+
+/* review */
+.review-area > p{
+    margin : 0px;
+}
+
+.review-area-info{
+    font-size:80%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.review-write-title{
+    font-size: 120%;
+}
+
+.review-write-writer{
+    width:auto;
+}
+
+.review-write-content{
+    width:100%;
+}
+
+.review-write-header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.review-write-header-content{
+    display: flex;  
+    align-items: center;
+    margin-bottom: 0px;
+}
+
+/* writeform */
+.writeform-btn{
+    display: flex;
+    text-align: center;
+    justify-content: end;
+}
+
+/* update */
+.update-btn{
+    display: flex;
+    text-align: center;
+    justify-content: end;
+}
+
+/* signup */
+.signup-btn{    
+    display: flex;
+    text-align: center;
+    justify-content: end;
+}
