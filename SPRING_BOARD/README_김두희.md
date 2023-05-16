@@ -130,7 +130,7 @@ __✔ 작성 정보__
 
 ## 🔹 API 명세서
 
-![image](https://user-images.githubusercontent.com/118238663/235281690-0ec2f04f-be1e-4207-a749-721f9c449a11.png)
+![api](https://github.com/Duhui-Kim/BoardProject/assets/118238663/71123320-60d2-4e64-afa4-8f8af777c25a)
 
 <br>
 
