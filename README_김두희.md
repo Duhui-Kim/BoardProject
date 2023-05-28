@@ -1,10 +1,10 @@
-# 🎬 Duhui_Board (Spring Framework)
+# 🎬 DuHoHi_Board (Spring Framework)
 
 <br>
 
 __✔ 작성 정보__
 
-- 작  성  자 : 서울 8반 김두희
+- 작  성  자 : 김두희 (with 권호희)
 
 - 날        짜 : 2023-04-25
 
@@ -130,7 +130,7 @@ __✔ 작성 정보__
 
 ## 🔹 API 명세서
 
-![api](https://github.com/Duhui-Kim/BoardProject/assets/118238663/71123320-60d2-4e64-afa4-8f8af777c25a)
+![제목 없음](https://github.com/Duhui-Kim/CodingTest_JAVA/assets/118238663/e7ba793d-099c-4c90-ac51-1605b8658bfd)
 
 <br>
 
