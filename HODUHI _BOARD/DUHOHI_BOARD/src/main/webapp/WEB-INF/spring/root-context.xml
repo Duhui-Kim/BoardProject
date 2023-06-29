@@ -10,7 +10,6 @@
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
-	<!-- 서울5김봉준 데이타소스는 아무거나 써도됨 PPT spring jdbc 안에 있는거 써도됨.-->
 	<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
 		<property name="url" value="jdbc:mysql://localhost:3306/duhohi_board?serverTimezone=UTC"/>
 		<property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
